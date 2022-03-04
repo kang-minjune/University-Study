@@ -11,12 +11,11 @@
  }
  int main() // 번외 1) 두 수의 합산 (scanf 사용)
  {
- 	int a, b, c;
- 	 c=a+b ;
+ 	 int a, b, c;
 	 scanf("%d %d", &a,&b);
-	 printf("%d", c);
+	 printf("%d", a+b);
  }
-
+ 
 int main() // 2) 구구단 세로형  
 {
 	int a, b, i, j;
@@ -71,6 +70,7 @@ int main() //2주차 실습 예상문제 5) 1부터 100까지 더하기;
 	 }
 	printf("%d", a);
  }*/ 
+int main()//2주차 실습 예상문제 4) 원의 지름과 면적 
 
 
 
