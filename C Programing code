@@ -1,0 +1,650 @@
+#include"stdio.h"
+#include"stdafx.h"
+#include"math.h"
+#include"stdlib.h"
+/*int main()
+{
+ int a=5, *b ;
+ b=&a ;
+ printf("%d %d \n", a, b) ;
+ printf("%d %d \n", *b, &a) ;
+}
+int main()
+{
+ int i, *b ;
+ printf(" i값   i의 주소 \n") ;
+ printf("---------------\n") ;
+ for(i=1; i<=3; i++)
+ {
+  b=&i ;
+  printf("%3d ", i) ;
+  printf("%10d\n", b) ;
+ }
+ printf("---------------\n") ;
+}
+int main()
+{
+ char a, b , *p, *q ;
+ a='A', b='B' ;
+ p=&a, q=&b ;
+ printf("%d %d \n", a, b) ;
+ printf("%c %c \n", &a, &b) ;
+}
+int main()
+{
+ 
+ int i ,x[100] ;
+ for(i=1; i<=5; i++)
+  scanf("%d", &x[i] );
+ printf("\n") ;
+ for(i=5; i>=1; i--) 
+ printf("%3d", x[i]) ;
+ printf("\n") ;
+}
+int main()// 실습 56번 
+{
+ char name[10][25] ;
+ int i ;
+ for(i=1 ; i<=5; i++)
+  scanf("%s", &name[i]) ;
+ printf("%d \n", &name[0]) ;
+ printf("%d \n", name) ;
+ printf("%s %s \n",name[2], name[4]) ;
+}
+int main()
+{
+ char a[]={'A','B','C','D'};
+ char *p ;
+ p= &a[0] ;
+ printf("%d %d %d %d\n", &a[0], &a[1], &a[2],&a[3]) ;
+ printf("%c  %c \n",*p,*(p+2)) ;
+}
+int main()
+{
+ char *name ;
+ name="korea" ;
+ printf("%s\n", name) ;
+ printf("%d\n", name) ;
+ printf("\n") ;
+ printf("%c %c\n", *name,*(name+3)) ;
+ printf("%d %d\n", &name[0], &name[3]) ;
+} 
+int main()
+{
+ char city[4][15] ;
+    int i ;
+ for(i=1; i<=4; i++)
+ scanf("%s", &city[i]) ;
+  
+  printf("%s %s %s %s\n", city[4], city[3],city[2],city[1]) ;
+ 
+}
+int main()
+{
+ char *name ;
+ name="korea";
+ printf("%c %c %c %c %c\n", *(name+4), *(name+3), *(name+2), *(name+1), *name) ;
+}
+int main()
+{
+ char *name ;
+ int i ;
+ name="korea" ;
+ for(i=4; i>=0; i--)
+  printf("%3c", *(name+i)) ;
+}
+int main()
+{
+ char *p ;
+ int i ;
+ p="university" ;
+ for(i=0; i<=9; i++) 
+ printf("%3c", *(p+i)) ;
+}
+int main()
+{
+ FILE *pt ;
+ char a='A' ;
+ pt=fopen("c:\\temp\\file-1.txt","w") ;
+ fprintf(pt,"%c \n", a) ;
+ fclose(pt)  ;
+}
+int main()
+{
+ FILE *pt ;
+ char t ;
+ pt=fopen("c:\\temp\\file-1.txt","r") ;
+ fscanf(pt,"%c", &t) ;
+ printf("%c \n", t) ;// 비주얼로 불러올땐 그냥 printf 사용
+ fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ char ch ;
+ pt=fopen("c:\\temp\\file-1.txt","a+") ;
+ scanf("%c", &ch) ;
+ fprintf(pt,"%c \n", ch) ;
+ fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ char d ;
+ pt=fopen("c:\\temp\\file-1.txt","w") ;           
+ d=getchar() ;
+ fprintf(pt,"%c \n", d) ;
+ fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ char *a; 
+ a="KNU" ;
+ pt = fopen("c:\\temp\\file-3.txt","w") ;
+ fprintf(pt,"%s", a) ;
+ fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ char a[10];
+ pt=fopen("c:\\temp\\file-3.txt","r") ;
+ fscanf(pt,"%s", a) ;
+ printf("%s \n", a) ;
+ fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ char a[10] ;
+ pt=fopen("c:\\temp\\Sam.1.txt","w") ;
+    scanf("%s", &a) ;
+ fprintf(pt,"%s", a) ;
+ fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ int i, price;
+ char a[20] ;
+ pt = fopen("c:\\temp\\menu.txt","w") ;
+ for(i=1; i<=3; i++){
+ scanf("%s %d", &i, &price) ;
+ fprintf(pt,"%s\n", i, price) ;}
+ fclose(pt) ;
+}
+int main()
+{
+ float x;
+ for(x=1; x<=5; x++) 
+ printf("%d %f\n", (int)x, sqrt(x));
+}
+int main()
+{
+ int x ;
+ for(x=2; x<=32; x=x+3)
+ printf("%d \n", x*x) ;
+}
+int main()
+{
+ FILE *pt ;
+ pt=fopen("c:\\temp\\e113-c.txt","w") ;
+ int i ; float s=0,x;
+ for(i=1; i<=5 ; i++){
+ scanf("%f", &x) ;
+ fprintf(pt,"%d \n", (int)x) ;
+ }
+ 
+}
+int main()
+{
+ FILE *pt ;
+ pt=fopen("c:\\temp\\e113-c.txt","r") ;
+ int i ; float ss=0, s=0, x;
+ for(i=1; i<=5 ; i++)
+ {
+ fscanf(pt,"%f", &x) ;
+ s=s+x ;
+ ss=ss+x*x ;
+ } 
+ printf("%f \n", (ss/5)-(s/5)*(s/5)) ;
+ fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ pt=fopen("c:\\temp\\pr59-c.txt","w") ;
+ int i, hap=0, na ; 
+ for(i=1; i<=100; i++) 
+ {
+  na=i%7 ;
+  if(na==0)
+  {
+   hap=hap + i ;
+   fprintf(pt,"%d \n", hap) ;
+        }
+ }
+ fclose(pt) ;
+}
+int main()
+{
+ int n, na ; 
+ for(n=1;n<=100 ; n++)
+ {
+  printf("%5d", n) ;
+  na=n%7 ;
+  if(na==0) printf("\n") ;
+ }
+}
+int main()
+{
+ system("chcp 437") ;
+ int n, na ;
+ for(n=1; n<=255; n++)
+ {
+  na=n/15 ;
+ if(na==0){
+  printf("\n") ;}
+ printf("  ") ;
+ putchar(500) ;
+    }
+ printf("\n") ;
+}
+int main()
+{
+	FILE *pt ;
+	int i ;
+	char *name ; 
+	name="1 Alfred   M   14\n2   Alice     F     13\n3   Barbara   F   13\n4   Carol     F     14\n5   Henry     M     14\n6   James　  M　  12\n7   Jane　    F　    12\n8   Janet  　F　  15\n9   Jeffrey　  M  　13\n10   John　  M  　12" ;
+    pt=fopen("c:\\temp\\htwt.txt","w") ;  
+	for(i=0; i<=10; i++) 
+	fscanf(pt,"%d %s\n", &i ,&name) ;
+	fprintf(pt,"%d %s \n", i,name) ;
+	fclose(pt) ;
+}
+int main()
+{
+ FILE *pt ;
+ int i ;
+ char name[100][100] ;
+ pt=fopen("c:\\temp\\htwt.txt","r") ;
+ fscanf(pt,"%s",&name) ;
+ printf("%s \n ",name) ; 
+ printf("\n") ;
+ 
+ fclose(pt) ;
+}
+int main()
+{
+	FILE *pt ;
+	pt=fopen("c:\\temp\\sum_mean.txt","w") ;
+	int i  ; float s = 0 , x ;
+	for(i=1; i<=5; i++)
+	{
+		scanf("%f", &x) ;
+		s=s+x ;
+		fprintf(pt,"%f %f\n", s, s*0.5) ;
+	}
+	
+}
+int main() 
+{
+	int n ;
+	for(n=1; n<=100; n++) 
+		printf("%d \n", n) ;
+}
+int main()
+{
+	int i, a=1, b=1 , c ;
+	printf("%10d%10d", a, b) ;
+	for(i=3; i<=20; i++) 
+	{
+		c=a+b ;
+		printf("%5d", c) ;
+		a=b; 
+		b=c;
+	}
+	printf("\n") ;
+}
+int main()
+{
+	float c, f ;
+	printf(" 섭씨		화씨\n") ;
+	printf("----------------------\n") ;
+	for(c=0; c<=100; c=c+5)
+	{
+		f=9./5*c+32;
+		printf("%d               %d\n", (int)c,(int)f) ;
+	}
+	printf("------------------------\n") ;
+}
+int main()
+{
+	int i, na ;
+	for(i=1; i<=100; i++)
+	{
+		na=i%2 ;
+		if(na==0) printf("%10d", i) ;
+	}
+	printf("\n") ;
+}
+int main() // pow 즉 지수형은 무조건 실수이기 때문에 강제변환을 해줘야 한다.
+{
+	int i ;
+	for(i=1; i<=15; i++)
+	{
+		printf("%10d", (int)pow(2.,i)) ;
+	}
+	printf("\n") ;
+}
+int main()
+{
+	int i, na; float sum;
+	for(i=1; i<=10000; i++)
+	{
+		sum=1./(float)pow(i,.2);
+		na=(int)sum%1000 ;
+		if(na==0) printf("\n") ;
+		printf("%10f", sum) ;
+	}
+}
+int main()
+{
+	int i, j,a ;
+	for(i=1; i<=9; i++) 
+	{
+		for(j=1; j<=9; j++)					
+		printf("%2d*%2d = %\d", i,j,i*j) ;
+	}
+}
+int main()
+{
+	int i  ,a;
+	float S=0;
+	for(i=1; i<=10000; i++) 
+	{
+		a=S+1./(i*i) ;
+	    if(a%1000==0) printf("\n") ;
+		printf("%10f", (float)a) ;
+	}
+	printf("\n") ;
+}
+float expr(float x)
+{
+	float y;
+	y=x*x+1 ;
+	printf("부: %f \n", y) ;
+	return y;
+}
+
+int main()
+{
+	float x ;
+	scanf("%f", &x) ;
+	printf("주: %f\n", expr(x) ) ;
+}
+float fac(int k)
+{
+	int i, fact=1;
+	for(i=1; i<=k; i++)
+		fact=fact*i ;
+	return fact ;
+}
+int main()
+{
+	int n ;
+	scanf("%d",&n) ;
+	printf("%f\n",(float)fac(n)) ;
+}
+int add(int x, int y)
+{
+	int z ;
+	z=x+y ;
+	printf("함수경유\n") ;
+	return z ;
+}
+int main()
+{
+	int a=2, b=5, sum ;
+	sum=add(a,b);
+	printf("%d + %d = %d\n", a, b, sum);
+}
+int main()
+{
+	int n, i, na ;
+	scanf("%d", &n) ;
+	for(i=1; i<=n; i++)
+	{
+	    na=n%i ;
+		if(na==0) printf("%d", i) ;
+		
+	}
+	n=n/i ;
+}
+int main()
+{
+	int i, n, s=0 ;
+	scanf("%d", &n) ;
+	for(i=0; i<=n; i++)
+	s=1+i*2;
+    printf("%d", s) ;
+}
+int main()
+{
+	float x, y ;
+	for(x=0; x<=4; x=x+0.5) 
+	{
+		y=x*x+1 ;
+		printf("%f %f \n", x, y);
+	}
+	printf("\n") ;
+}
+int main()
+{
+	float x, y ;
+	for(x=1; x<=2; x=x+0.1)
+	{
+		printf("%f \n", x) ;
+	}
+}
+int main()
+{
+	char name[25][100] ;
+	int i ;
+	for(i=1; i<=5; i++) 
+	{
+		scanf("%s",&name[i]) ;
+		
+	}
+	printf("%s  %s\n",name[2],name[4]) ;
+}
+int main()
+{
+	char city[100][100] ;
+	int i;
+	for(i=4; i>=1; i--) 
+
+		scanf("%s", &city[i]) ;
+	printf("%5s", city[i]) ;
+}
+int main()
+{
+	char *name ; int i;
+	name="korea" ;
+	for(i=4; i>=0; i--) 
+		printf("%c", *(name+i)) ;
+}
+int main()
+{
+	char *p;
+	int i;
+	p="university" ;
+	for(i=0; i<=9; i++)
+		printf("%3c", *(p+i)) ;
+}
+int main()
+{
+	int i, na, n;
+	char a[1000] ;
+	scanf("%d", &n) ;
+	for(i=1; i<=n; i++)
+	{
+		na=n%i ; 
+	   if(na==0)  printf("%3d", i) ;
+	   a[i++] ;
+		
+	}
+}
+int main()
+{
+	int i; float s=0,x,m ;
+	for(i=1; i<=100; i++)
+		
+	{
+		scanf("%f",&x) ;
+		if(x>=0) 	
+		
+		m = s/i ;
+		printf("%3f",m);
+	
+		} 
+		s=s+x ;
+}
+int main()
+{
+	double x, y, z;
+	for(z=0; z<=1; z=z+0.1)
+	{
+		x=z+1;
+		y=x/(x*x+1);
+		printf("%f %f %f\n", z, x, y) ;
+	}
+}
+int main()
+{
+	int i, na ;
+	for(i=1; i<=100; i++)
+	{
+		na=i%2 ;
+		if(na==0) printf("%d \n", i) ;
+	}
+}
+int main()
+{
+	int i, j;
+	for(i=1; i<=9; i++)
+	{
+		for(j=1; j<=9; j++)
+			printf("%d*%d=%-4d", j,i,i*j) ;
+		printf("\n") ;
+	}
+}
+int main()
+{
+	int i  ; double sum=0 ;
+	for(i=1; i<=10000; i++)
+	{
+		sum=sum+1./i*i ;
+		if(i%1000==0) printf("\n") ;
+		printf("%f", sum) ;
+	}
+}
+int main()
+{
+	double s; int i;
+	for(i=1; i<=10000; i++)
+	{
+		s=1./(i*i) ;
+		if(i%1000==0){
+			printf("%.25f \n", s) ;
+		}
+	}
+}
+int main()
+{
+	double x, y ;
+	for(x=1; x<=10; x=x+0.1)
+	{
+		printf("%5.2f", x) ;
+		for(y=0.00; y<=0.09; y=y+0.01)
+			printf("%f", log10(x+y)) ;
+		printf("\n") ;
+	}
+}
+int main()
+{
+	int i,n;	 double s ;
+	for(i=1; i<=n; i++)
+	{
+		scanf("%d", &n) ;
+		s=s+sqrt(6*(1./(i*i))) ;
+		printf("%f \n", s ) ;
+	}
+}
+int main()
+{
+	int i, n, day=1 ;
+	for(i=0; i<=2000; i++) 
+	{
+        day=day+(2*i) ;
+		if(day>1000000)
+			{printf("%d \n", i) ; break;}
+	}
+}
+int main()
+{
+	int i ; float a=0;
+	for(i=1; i<=100; i++)
+	{
+		a=a+1./i ;
+		if(a>5) {printf("%d", i); break ;}
+	}
+}
+int main()
+{
+	int i, day, k;
+	for(i=0; i<=1000; i++)
+	{
+        day = 1+i*2 ;
+		if(day>1000000){printf("%d\n", i) ;  break ;}
+	}	
+}
+float sum(int n, int k) 
+{
+	int i, n, z, a,sum=0 ;
+	for(i=1; i<=n; i++)
+	 sum(*n.0k)=sum+pow(i,k) ;
+}
+int main()
+{
+	int n=2 , k=3 ;-0
+
+int main()
+{
+	int i, n ;
+	char a[]={} ;
+	scanf("%d", &n) ;
+	for(i=1; i<=n; i++)
+
+
+int main()
+{
+	double x,y ;
+	for(x=1; x<=10; x=x+0.01)
+	{
+		printf("%5.2f",x) ;
+		for(y=0.00; y<=0.09; y=y+0.01) 
+			printf("%7.4f", log10(x+y));
+		printf("\n") ;
+	}
+}
+int main()
+{
+	double m, na;
+	m=0.01;
+aa: na=m*2 ;
+	printf("%d \n", na) ;
+	if(na<1.00) goto aa;
+	else printf("%d /n", (int)m) ;
+}*/
