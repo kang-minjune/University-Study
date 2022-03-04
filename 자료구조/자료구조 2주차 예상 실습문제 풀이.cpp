@@ -2,7 +2,7 @@
 #include"math.h"
 #include"stdlib.h"
 
-/* int main() //2주차 실습 예상문제 1) 두 수의 합산 
+int main() //2주차 실습 예상문제 1) 두 수의 합산 
 { 
 	int a, b;
 	a = 1 ;
@@ -69,7 +69,7 @@ int main() //2주차 실습 예상문제 5) 1부터 100까지 더하기;
 		a = a+i;
 	 }
 	printf("%d", a);
- }*/ 
+ }
 int main()//2주차 실습 예상문제 4) 원의 지름과 면적 
 
 
