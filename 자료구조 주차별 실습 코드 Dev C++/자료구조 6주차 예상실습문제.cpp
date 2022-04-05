@@ -2,8 +2,10 @@
 #include"math.h"
 #include"stdlib.h"
 #include "iostream"
+#include <stdlib.h> 
+#include <time.h> 
 /*
-int main()//6ÁÖÂ÷ ½Ç½À ¿¹»ó ¹®Á¦ 1)¹è¿­À» ÀÌ¿ëÇÏ¿© 3¸íÀÇ ±¹¿µ¼ö ÀÔ·Â¹Ş¾Æ ÇÕ»ê°ú Æò±Õ ±¸ÇÏ±â 
+int main()//6ì£¼ì°¨ ì‹¤ìŠµ ì˜ˆìƒ ë¬¸ì œ 1)ë°°ì—´ì„ ì´ìš©í•˜ì—¬ 3ëª…ì˜ êµ­ì˜ìˆ˜ ì…ë ¥ë°›ì•„ í•©ì‚°ê³¼ í‰ê·  êµ¬í•˜ê¸° 
 {
 	int korea[5],english[5],math[5], i, j, sum[5] ,ag[5] ;
 	char name[100] ;
@@ -12,7 +14,7 @@ int main()//6ÁÖÂ÷ ½Ç½À ¿¹»ó ¹®Á¦ 1)¹è¿­À» ÀÌ¿ëÇÏ¿© 3¸íÀÇ ±¹¿µ¼ö ÀÔ·Â¹Ş¾Æ ÇÕ»ê°ú 
 	{
 		scanf("%d%d%d", &korea[i], &english[i], &math[i]) ;
 		sum[i]= korea[i] + english[i] + math[i] ;
-		printf("%d¹ø ÇĞ»ıÀÇ Á¡¼ö ÃÑÇÕ  = %d\n",i,sum[i]);
+		printf("%dë²ˆ í•™ìƒì˜ ì ìˆ˜ ì´í•©  = %d\n",i,sum[i]);
 	}
 	printf("\n");
 	for(i=1; i<=3; i++)
@@ -23,34 +25,34 @@ int main()//6ÁÖÂ÷ ½Ç½À ¿¹»ó ¹®Á¦ 1)¹è¿­À» ÀÌ¿ëÇÏ¿© 3¸íÀÇ ±¹¿µ¼ö ÀÔ·Â¹Ş¾Æ ÇÕ»ê°ú 
 			ag[i] = sum[i]/3 ;
 			
 		}
-		printf("%d¹ø ÇĞ»ıÀÇ Æò±Õ  = %d\n",i,ag[i]);
+		printf("%dë²ˆ í•™ìƒì˜ í‰ê·   = %d\n",i,ag[i]);
 	}
 
 }
 
 
-int main() //6ÁÖÂ÷ ¿¹»ó ½Ç½À ¹®Á¦ 2) ÀÚ½ÅÀÇ ÀÌ¸§, ÇĞ¹ø, ÇĞ°ú¸íÀ» ¹è¿­·Î ÃÊ±âÈ­ÇÏ¿© Ãâ·Â 
+int main() //6ì£¼ì°¨ ì˜ˆìƒ ì‹¤ìŠµ ë¬¸ì œ 2) ìì‹ ì˜ ì´ë¦„, í•™ë²ˆ, í•™ê³¼ëª…ì„ ë°°ì—´ë¡œ ì´ˆê¸°í™”í•˜ì—¬ ì¶œë ¥ 
 {	
 	int	b[7]={1,9,7,1,0,0,2}, i;
-	char a[10]="°­¹ÎÁØ";
-	char c[20] = "ITÀÎ°øÁö´ÉÇĞºÎ";
+	char a[10]="ê°•ë¯¼ì¤€";
+	char c[20] = "ITì¸ê³µì§€ëŠ¥í•™ë¶€";
 	
-	printf("ÀÌ¸§: %s",a) ;
+	printf("ì´ë¦„: %s",a) ;
 	printf("\n");
 	
-	printf("ÇĞ¹ø: ");
+	printf("í•™ë²ˆ: ");
 	for(i=0; i<7; i++)
 	{
 		printf("%d", b[i]);
 	}
 	printf("\n");
 	
-	printf("ÇĞ°ú¸í: %s", c);
+	printf("í•™ê³¼ëª…: %s", c);
 
 } 
 
 
-#define SIZE 3 // 6ÁÖÂ÷ 2)<¹ø¿Ü¹®Á¦>  ¹è¿­À» »ç¿ëÇØ¼­ ¿©·¯¸íÀÇ ÀÌ¸§, ÇĞ¹ø, ÇĞ°ú¸íÀ» ÀÔ·ÂÇØ Ãâ·Â 
+#define SIZE 3 // 6ì£¼ì°¨ 2)<ë²ˆì™¸ë¬¸ì œ>  ë°°ì—´ì„ ì‚¬ìš©í•´ì„œ ì—¬ëŸ¬ëª…ì˜ ì´ë¦„, í•™ë²ˆ, í•™ê³¼ëª…ì„ ì…ë ¥í•´ ì¶œë ¥ 
 
 struct Student 
 {
@@ -68,11 +70,11 @@ struct Student
 
      for( i = 0; i<SIZE; i++)
      {
-         printf("ÇĞ¹øÀ» ÀÔ·ÂÇÏ½Ã¿À:");
+         printf("í•™ë²ˆì„ ì…ë ¥í•˜ì‹œì˜¤:");
          scanf("%s",&list[i].studentId);
-         printf("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À:");
+         printf("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤:");
          scanf("%s",&list[i].name);
-         printf("ÇĞ°ú¸íÀ» ÀÔ·ÂÇÏ½Ã¿À:");
+         printf("í•™ê³¼ëª…ì„ ì…ë ¥í•˜ì‹œì˜¤:");
          scanf("%s",&list[i].magor);
          printf("\n");
      }
@@ -81,18 +83,18 @@ struct Student
      
      for(i=0; i<SIZE; i++)
      {
-     printf("ÇĞ¹ø:%s, ÀÌ¸§:%s, ÇĞ°ú¸í:%s\n",list[i].studentId,list[i].name,list[i].magor);
+     printf("í•™ë²ˆ:%s, ì´ë¦„:%s, í•™ê³¼ëª…:%s\n",list[i].studentId,list[i].name,list[i].magor);
      }
 	 return 0;
 }
 
 
 
-int main() //6ÁÖÂ÷ ÀÚ·á±¸Á¶  ½Ç½À ¿¹»ó¹®Á¦ 3) case¹®À» È°¿ëÇÏ¿© ÇĞÁ¡ Ãâ·Â 
+int main() //6ì£¼ì°¨ ìë£Œêµ¬ì¡°  ì‹¤ìŠµ ì˜ˆìƒë¬¸ì œ 3) caseë¬¸ì„ í™œìš©í•˜ì—¬ í•™ì  ì¶œë ¥ 
 {
 
 	int score, s;
-	printf("ÇĞÁ¡: ");
+	printf("í•™ì : ");
 	scanf("%d", &score);
 
 	
@@ -122,27 +124,44 @@ int main() //6ÁÖÂ÷ ÀÚ·á±¸Á¶  ½Ç½À ¿¹»ó¹®Á¦ 3) case¹®À» È°¿ëÇÏ¿© ÇĞÁ¡ Ãâ·Â
 		default:
 			printf("fail"); 
 	}
-}*/
-void temperature(double c, double f) ;
-int main(void) //6ÁÖÂ÷ ½Ç½À ±¸Á¶ 4)È­¾¾ ¿Âµµ¸¦ ¼·¾¾¿Âµµ·Î º¯È¯ 
-{
-	 double c, f, f2=0,fx;
-	 printf("È­¾¾ ¿Âµµ ÀÔ·Â: ") ;
-	 c=(f-32)*5./9;
-	 scanf("%lf", &f);
-
-	  
-	 printf("¼·¾¾:%lf", c); 
-	 return 0;
- } 
-
-double d (double c, double f)
-{	
-	return c ;
 }
 
-
-
+double CT(double ft) //6ì£¼ì°¨  4)í™”ì”¨ ì˜¨ë„ì—ì„œ ì„­ì”¨ì˜¨ë„ë¡œ ë³€í™˜  
+{
+	double ct;
+	ct = (ft-32)/1.8;
+	return ct;
+	}
 	
+	int main(void)
+	{
+		double ip;
+		printf("í™”ì”¨ì˜¨ë„:");
+		scanf("%lf",&ip);
+		printf("ì„­ì”¨ì˜¨ë„ ë³€í™˜: %lf",CT(ip));
+	return 0;
+} 
+
+
+int main(void) //6ì£¼ì°¨  5)ì£¼ì‚¬ìœ„ 100ë²ˆ ë˜ì ¸ í™•ë¥  ì¶œë ¥  
+{
+	float dice[7] = {0 ,};
+	
+	int x, n; 
+	
+	srand(time(NULL));
+	
+	for(x = 1; x<= 100; x++)
+	{
+		n = 1 + (rand() % 6);
+		dice[n]++;
+	 } 
+	for(x=1; x<=6; x++)
+	{
+		printf("100ë²ˆ ì¤‘ %dë²ˆì´ ë‚˜ì˜¬ í™•ë¥ : %f\n", x, dice[x]/100);
+		printf("\n"); 
+	}
+	return 0;
+ }*/
  
  
